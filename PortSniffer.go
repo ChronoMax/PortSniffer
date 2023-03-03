@@ -14,4 +14,9 @@ func main() {
 	open := port.ScanPort("tcp", "localhost", 80)
 	//Prints the text with the set value.
 	fmt.Printf("Port open: %t\n", open)
+
+	//Defines the var result as the return value of rhe func InitialScan in the port directory.
+	results := port.InitialScan("Localhost")
+	//Prints out all the returned values.
+	fmt.Println(results)
 }
