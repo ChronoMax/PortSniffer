@@ -8,9 +8,9 @@ import (
 
 func ScanPort(protocol, hostname string, port int) bool {
 	//Create adress hostname with port.
-	addres := hostname + ":" + strconv.Itoa(port)
+	address := hostname + ":" + strconv.Itoa(port)
 	//if there is a timeout after 60 seconds.
-	conn, err := net.DailTimeout(protocol, addres, 60*time.Seccond)
+	conn, err := net.DialTimeout(protocol, address, 60*time.Second)
 
 	//if the connection does not accept hostname with port retun false.
 	if err != nil {
